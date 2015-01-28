@@ -8,8 +8,6 @@ This plugin helps the developer convert ASCII to
 HTML Character Entities (a/k/a Special Characters)
 using either an interactive table or a prompt.
 
-Project page: https://github.com/landonb/dubs_html_entities
-
 This code is a reworking of Christian Habermann's awesome
 chartab.vim, which displays an interactive list of ASCII
 character values. Check it out here:
@@ -41,6 +39,30 @@ I lifted the list of HTML4 Character Entities from TNT Luoma:
           surprise yourself sometimes after a backspace.
 
           Hint: Try ``:TabMessage digraph`` to copy and paste digraphs.
+
+Installation
+------------
+
+Standard Pathogen installation:
+
+.. code-block:: bash
+
+   cd ~/.vim/bundle/
+   git clone https://github.com/landonb/dubs_html_entities.git
+
+Or, Standard submodule installation:
+
+.. code-block:: bash
+
+   cd ~/.vim/bundle/
+   git submodule add https://github.com/landonb/dubs_html_entities.git
+
+Online help:
+
+.. code-block:: vim
+
+   :Helptags
+   :help dubs-html-entities
 
 Entity Table Commands
 ---------------------
