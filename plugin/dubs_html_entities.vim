@@ -1,11 +1,11 @@
 " File: dubs_html_entities.vim
 " Author: Landon Bouma (landonb &#x40; retrosoft &#x2E; com)
-" Last Modified: 2015.01.27
+" Last Modified: 2016.03.24
 " Project Page: https://github.com/landonb/dubs_html_entities
 " Summary: HTML Character Entity Table
 " License: GPLv3
 " -------------------------------------------------------------------
-" Copyright © 2009, 2015 Landon Bouma.
+" Copyright © 2009, 2015-2016 Landon Bouma.
 " 
 " This program is free software: you can redistribute it and/or
 " modify it under the terms of the GNU General Public License as
@@ -66,6 +66,9 @@ let plugin_htmlchartable_vim = 1
 
 " Configuration
 " ------------------------
+
+" 2016.01.19: Try using the :digraph feature.
+":set digraph
 
 " Use <Plug> to name the functions we want to be 
 " _easily_ publically accessible -- this is so 
@@ -503,12 +506,16 @@ let s:prefix = ""
 " Starts the table buffer with a header and 
 " a short list of available user commands
 function s:MakeHeader()
-  let s:txt =         "\"" . s:prefix . 
+  let s:txt =         "\"" . s:prefix .
     \ "     HTML Character Entity Table   \n"
-  let s:txt = s:txt . "\"" . s:prefix . 
+  let s:txt = s:txt . "\"" . s:prefix .
     \ "   =============================== \n"
-  let s:txt = s:txt . "\"" . s:prefix . 
+  let s:txt = s:txt . "\"" . s:prefix .
     \ "    b : base | r : rip | q : quit  \n"
+  let s:txt = s:txt . "\"" . s:prefix .
+    \ "                                   \n"
+  let s:txt = s:txt . "\"" . s:prefix .
+    \ " See also :digraph, e.g., - <BS> M \n"
 endfunction
 
 " Creates the HTML Character Entity table
