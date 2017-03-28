@@ -1,11 +1,11 @@
 " File: dubs_html_entities.vim
 " Author: Landon Bouma (landonb &#x40; retrosoft &#x2E; com)
-" Last Modified: 2016.03.24
+" Last Modified: 2017.03.28
 " Project Page: https://github.com/landonb/dubs_html_entities
 " Summary: HTML Character Entity Table
 " License: GPLv3
 " -------------------------------------------------------------------
-" Copyright © 2009, 2015-2016 Landon Bouma.
+" Copyright © 2009, 2015-2017 Landon Bouma.
 " 
 " This program is free software: you can redistribute it and/or
 " modify it under the terms of the GNU General Public License as
@@ -83,36 +83,36 @@ let plugin_htmlchartable_vim = 1
 "       pending the name of the script first), 
 "       while a <SID> fcn. is re-named by Vim to 
 "       include the script ID (which is generated 
-"       at startup, so <SID>HCT_QuickLookup 
-"       might really be <SNR>16_HCT_QuickLookup())
+"       at startup, so <SID>QuickLookup 
+"       might really be <SNR>16_QuickLookup())
 
 " ---------------
 " Map <Leader>ht to the Html Table
-if !hasmapto('<Plug>HCT_HtmlCharTable')
+if !hasmapto('<Plug>DubsHtmlEntities_HtmlCharTable')
   map <silent> <unique> <Leader>ht 
-    \ <Plug>HCT_HtmlCharTable
+    \ <Plug>DubsHtmlEntities_HtmlCharTable
 endif
 " Map <Plug> to an <SID> function
-map <silent> <unique> <script> 
-  \ <Plug>HCT_HtmlCharTable 
-  \ :call <SID>HCT_HtmlCharTable()<CR>
+noremap <silent> <unique> <script> 
+  \ <Plug>DubsHtmlEntities_HtmlCharTable 
+  \ :call <SID>HtmlCharTable_Wrapper()<CR>
 " And finally thunk to the script fcn.
-function <SID>HCT_HtmlCharTable()
+function <SID>HtmlCharTable_Wrapper()
   call s:HtmlCharTable()
 endfunction
 
 " ---------------
 " Map <Leader>hT (with a CAP) to the Quick Lookup
-if !hasmapto('<Plug>HCT_QuickLookup')
+if !hasmapto('<Plug>DubsHtmlEntities_QuickLookup')
   map <silent> <unique> <Leader>hT 
-    \ <Plug>HCT_QuickLookup
+    \ <Plug>DubsHtmlEntities_QuickLookup
 endif
 " Map <Plug>
-map <silent> <unique> <script> 
-  \ <Plug>HCT_QuickLookup 
-  \ :call <SID>HCT_QuickLookup()<CR>
+noremap <silent> <unique> <script> 
+  \ <Plug>DubsHtmlEntities_QuickLookup 
+  \ :call <SID>QuickLookup_Wrapper()<CR>
 " Thunk to local fcn.
-function <SID>HCT_QuickLookup()
+function <SID>QuickLookup_Wrapper()
   call s:QuickLookup()
 endfunction
 
@@ -121,19 +121,19 @@ endfunction
 " toggle function by making it a <Plug>
 "   1. Make the <Plug>
 map <silent> <unique> <script> 
-  \ <Plug>HCT_ToggleLookup 
-  \ :call <SID>HCT_ToggleLookup()<CR>
+  \ <Plug>DubsHtmlEntities_ToggleLookup 
+  \ :call <SID>ToggleLookup()<CR>
 "   2. Thunk the <Plug>
-function s:HCT_ToggleLookup()
+function s:ToggleLookup()
   " See if the table buffer exists
   if exists('s:viewBufNr')
       \ && (-1 != s:viewBufNr)
     " Yup. But is the buffer being shown in a 
     " window on the current tab? If so, close 
     " the table, otherwise, show it!
-    if 1 == s:HCT_IsTableVisibleInTab()
+    if 1 == s:IsTableVisibleInTab()
       " Close the table
-      call <SID>HCT_Exit()
+      call <SID>HctExit()
     else
       " Table is on a different tab, so show it
       " in the current tab, in the current window
@@ -174,10 +174,10 @@ endif
 " HTML Character Entity translations.
 " (Note: It's M-%, not M-S-5)
 " SYNC_ME: Dubsacks' <M-????> mappings are spread across plugins. [M-S-5]
-nmap <M-%> <Plug>HCT_ToggleLookup
-imap <M-%> <C-O><Plug>HCT_ToggleLookup<ESC>
-"cmap <M-%> <C-C><Plug>HCT_ToggleLookup<ESC>
-"omap <M-%> <C-C><Plug>HCT_ToggleLookup<ESC>
+nmap <M-%> <Plug>DubsHtmlEntities_ToggleLookup
+imap <M-%> <C-O><Plug>DubsHtmlEntities_ToggleLookup<ESC>
+"cmap <M-%> <C-C><Plug>DubsHtmlEntities_ToggleLookup<ESC>
+"omap <M-%> <C-C><Plug>DubsHtmlEntities_ToggleLookup<ESC>
 
 " ------------------------------------------
 " Private Interface:
@@ -287,7 +287,7 @@ endfunction
 " currently visible in a window in the tab
 " ('cause it might exist but in a window in 
 "  a different tab)
-function s:HCT_IsTableVisibleInTab()
+function s:IsTableVisibleInTab()
 
   let viewWinNr = bufwinnr(s:viewBufNr)
 
@@ -340,7 +340,7 @@ function s:CloseViewBuffer()
         " This lookup is always visible in a 
         " window, but that window is not 
         " necessarily in the current tab.
-        " However, HCT_IsTableVisibleInTab 
+        " However, IsTableVisibleInTab 
         " should make sure we don't try to 
         " close the table from a tab in 
         " which it's not being displayed.
@@ -399,17 +399,17 @@ function s:SetLocalKeyMappings()
   " Use 'q' to close the table buffer and 
   " switch to the previously used buffer
   nnoremap <buffer> <silent> q 
-    \ :call <SID>HCT_Exit()<CR>
+    \ :call <SID>HctExit()<CR>
 
   " Use 'b' to cycle forwards through set 
   " of bases
   nnoremap <buffer> <silent> b 
-    \ :call <SID>HCT_ToggleBase(1)<CR>
+    \ :call <SID>ToggleBase(1)<CR>
 
   " Use 'B' to cycle backwards through set 
   " of bases
   nnoremap <buffer> <silent> B 
-    \ :call <SID>HCT_ToggleBase(-1)<CR>
+    \ :call <SID>ToggleBase(-1)<CR>
 
   " Use 'r' to 'rip' the current entity 
   " and paste it in the previously used 
@@ -419,20 +419,20 @@ function s:SetLocalKeyMappings()
   " keep this and other commands on the 
   " left-side of the keyboard). 
   nnoremap <buffer> <silent> r 
-    \ :call <SID>HCT_YankExitAndPut()<CR>
+    \ :call <SID>YankExitAndPut()<CR>
  
   " Also map double-click to 'rip'
   nnoremap <buffer> <silent> <2-leftmouse> 
-    \ :call <SID>HCT_YankExitAndPut()<CR>
+    \ :call <SID>YankExitAndPut()<CR>
 
   " Also map <CR> to 'rip'
   nnoremap <buffer> <silent> <CR> 
-    \ :call <SID>HCT_YankExitAndPut()<CR>
+    \ :call <SID>YankExitAndPut()<CR>
 
   " Alias <ESC> to 'q'
   " ... everybody's favorite key!
   nnoremap <buffer> <silent> <ESC> 
-    \ :call <SID>HCT_Exit()<CR>
+    \ :call <SID>HctExit()<CR>
 
 endfunction
 
@@ -680,7 +680,7 @@ endfunction
 " base displays. I.e., user can choose whether 
 " entities are display in base-10, base-16, or 
 " by their friendly name
-function <SID>HCT_ToggleBase(direction)
+function <SID>ToggleBase(direction)
 
   " Save the current cursor position, since 
   " we're re-writing the buffer from scratch.
@@ -718,7 +718,7 @@ function <SID>HCT_ToggleBase(direction)
   endif
 
   " Redraw the table using the new base
-  call <SID>HCT_HtmlCharTable()
+  call <SID>HtmlCharTable_Wrapper()
 
   " Restore the cursor position.
   " NOTE Calling just cursor() centers the cursor 
@@ -768,13 +768,13 @@ endfunction
 "      numerous buffers before running this 
 "      command, I'm sure it'll not work as 
 "      expected.
-function <SID>HCT_YankExitAndPut()
+function <SID>YankExitAndPut()
   " Here's a map option that almost 
   " implements what we want:
   "
   "    nnoremap <buffer> <silent> p 
   "     \ ?&[#a-zA-Z0-9]\+;<CR>"xy/;<CR>
-  "     \ :call <SID>HCT_Exit()<CR>"xpa;<ESC>
+  "     \ :call <SID>HctExit()<CR>"xpa;<ESC>
   "
   " Alas, it's a little more complicated than
   " that. For the short list of common entities, 
@@ -857,14 +857,14 @@ function <SID>HCT_YankExitAndPut()
 
     " Lastly, close the table buffer and plop, 
     " er, *put* the yanked text into the buffer
-    call <SID>HCT_Exit()
+    call <SID>HctExit()
     execute "normal " . '"xp'
 
   endif
 endfunction
 
 " Job is done. Clean up.
-function <SID>HCT_Exit()
+function <SID>HctExit()
   " Close the lookup table buffer and window
   " and reposition the cursor
   call s:CloseViewBuffer()
