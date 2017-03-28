@@ -103,9 +103,9 @@ Toggle Entity List Visibility~
 			<Alt-Shift-5> (or <Alt-%>), add the
 			following to your vim environment: >
 
-				nmap <M-%> <Plug>HCT_ToggleLookup
+				nmap <M-%> <Plug>DubsHtmlEntities_ToggleLookup
 <
-				*<Shift-Alt-5>* *<M-%>* *<S-M-5>* *<S-A-5>* {HCT_ToggleLookup}
+				*<Shift-Alt-5>* *<M-%>* *<S-M-5>* *<S-A-5>* {ToggleLookup}
 <Shift-Alt-5>		Toggle HTML character entity table.
 
 
