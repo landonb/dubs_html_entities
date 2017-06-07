@@ -1,6 +1,6 @@
 " File: dubs_html_entities.vim
 " Author: Landon Bouma (landonb &#x40; retrosoft &#x2E; com)
-" Last Modified: 2017.03.28
+" Last Modified: 2017.06.06
 " Project Page: https://github.com/landonb/dubs_html_entities
 " Summary: HTML Character Entity Table
 " License: GPLv3
@@ -68,6 +68,14 @@ let plugin_htmlchartable_vim = 1
 " ------------------------
 
 " 2016.01.19: Try using the :digraph feature.
+" 2017-06-06 17:17: This was commented out.
+"  I'm curious if it'll help me be weird with Travel variable naming.
+"  Alternatively, I could use Ctrl-K <2-character-:digraph-code>
+"   but Dubsacks remaps Ctrl-K to buffer-forward.
+" 2017-06-06 17:21: Oh, that's right! I backspace too often,
+"   and the digraph feature just makes a mess of your text!
+"    Complete gibberish!
+"    [And why won't Vim let me save this Vim file with digraph chars in it??]
 ":set digraph
 
 " Use <Plug> to name the functions we want to be
