@@ -74,12 +74,12 @@ Interactive Entity Table
 interactive entity list in the current window.
 
 You can double-click entities to copy-and-paste
-them back to the buffer you were just 
-working on, or you can just position the cursor 
-over an entity and press ``r`` (or ``<Enter>``) to do 
+them back to the buffer you were just
+working on, or you can just position the cursor
+over an entity and press ``r`` (or ``<Enter>``) to do
 the same.
 
-Press ``b`` or ``B`` to cycle forwards or backwards 
+Press ``b`` or ``B`` to cycle forwards or backwards
 through the set of available bases.
 
 HTML recognizes three entity formats, e.g.,
@@ -88,8 +88,8 @@ HTML recognizes three entity formats, e.g.,
 | ``hexadecimal:           &#x3D6;``
 | ``entity/friendly name:  &piv;``
 
-Use ``q`` or ``<ESC>`` to quit the buffer. It will 
-be destroyed and the last working buffer will 
+Use ``q`` or ``<ESC>`` to quit the buffer. It will
+be destroyed and the last working buffer will
 be displayed instead.
 
 Interactive Entity Lookup
