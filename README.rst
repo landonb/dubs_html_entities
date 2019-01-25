@@ -1,5 +1,5 @@
-Dubsacks Vim — HTML Character Entity Lookup
-===========================================
+Dubs Vim — HTML Character Entity Lookup
+=======================================
 
 About This Plugin
 -----------------
@@ -124,10 +124,10 @@ following to your vim environment:
 
 ``nmap <M-%> <Plug>DubsHtmlEntities_ToggleLookup``
 
-Core Dubsacks Key Mappings
+Core Dubs Vim Key Mappings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you're using all the Dubsacks, the HTML entity table is already mapped.
+If you're using all the Dubs Vim, the HTML entity table is already mapped.
 
 ===========================  ============================  ==============================================================================
  Key Mapping                  Description                   Notes

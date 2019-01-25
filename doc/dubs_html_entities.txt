@@ -37,7 +37,7 @@ I lifted the list of HTML4 Character Entities from TNT Luoma:
      diacritical marks. See:
       http://vim.wikia.com/wiki/Entering_special_characters
      To insert a digraph, press <Ctrl-K> followed by the two
-     character combination shown under `:digraph`. Dubsacks
+     character combination shown under `:digraph`. Dubs Vim
      has <Ctrl-K> mapped to buffer-forward, so you can use
      `:set` `dg` instead, which works after a backspace,
      e.g., `<Ctrl-K>a:` could inѕtead be typed `a<BS>:`

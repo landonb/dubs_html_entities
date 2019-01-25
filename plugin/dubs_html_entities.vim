@@ -71,7 +71,7 @@ let plugin_htmlchartable_vim = 1
 " 2017-06-06 17:17: This was commented out.
 "  I'm curious if it'll help me be weird with Travel variable naming.
 "  Alternatively, I could use Ctrl-K <2-character-:digraph-code>
-"   but Dubsacks remaps Ctrl-K to buffer-forward.
+"   but Dubs Vim remaps Ctrl-K to buffer-forward.
 " 2017-06-06 17:21: Oh, that's right! I backspace too often,
 "   and the digraph feature just makes a mess of your text!
 "    Complete gibberish!
@@ -168,7 +168,7 @@ endif
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 " MAYBE: Don't set this here. But then, where? I could make,
-"        e.g., dubsacks_mappings.vim, and just store all my
+"        e.g., dubs-vim_mappings.vim, and just store all my
 "        mappings there, after making g:global attributes for
 "        all the plugins wherein mappings are hard-coded. Seems
 "        like a lot of work, though... so, for now, most mappings
@@ -181,7 +181,7 @@ endif
 " window, only this window shows you
 " HTML Character Entity translations.
 " (Note: It's M-%, not M-S-5)
-" SYNC_ME: Dubsacks' <M-????> mappings are spread across plugins. [M-S-5]
+" SYNC_ME: Dubs Vim's <M-????> mappings are spread across plugins. [M-S-5]
 nmap <M-%> <Plug>DubsHtmlEntities_ToggleLookup
 imap <M-%> <C-O><Plug>DubsHtmlEntities_ToggleLookup<ESC>
 "cmap <M-%> <C-C><Plug>DubsHtmlEntities_ToggleLookup<ESC>
