@@ -1,8 +1,11 @@
-Dubs Vim — HTML Character Entity Lookup
-=======================================
+###############################################
+Dubs Vim |em_dash| HTML Character Entity Lookup
+###############################################
+
+.. |em_dash| unicode:: 0x2014 .. em dash
 
 About This Plugin
------------------
+=================
 
 This plugin helps the developer convert ASCII to
 HTML Character Entities (a/k/a Special Characters)
@@ -40,7 +43,7 @@ I lifted the list of HTML4 Character Entities from TNT Luoma:
           Hint: Try ``:TabMessage digraph`` to copy and paste digraphs.
 
 Installation
-------------
+============
 
 Standard Pathogen installation:
 
@@ -64,10 +67,10 @@ Online help:
    :help dubs-html-entities
 
 Entity Table Commands
----------------------
+=====================
 
 Interactive Entity Table
-^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 
 ``<Leader>ht`` (usually ``\ht``) displays an
 interactive entity list in the current window.
@@ -92,7 +95,7 @@ be destroyed and the last working buffer will
 be displayed instead.
 
 Interactive Entity Lookup
-^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------
 
 ``<Leader>hT`` (usually ``\hT``) invokes the QuickLookup,
 which asks you to type an ASCII character which will be
@@ -110,7 +113,7 @@ that you don't have to hit return after typing
 the character to be translated).
 
 Toggle Entity List Visibility
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------
 
 You can obviously map ``<Leader>ht`` to any key
 command you want, but you can also map a
@@ -125,7 +128,7 @@ following to your vim environment:
 ``nmap <M-%> <Plug>DubsHtmlEntities_ToggleLookup``
 
 Core Dubs Vim Key Mappings
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you're using all the Dubs Vim, the HTML entity table is already mapped.
 
