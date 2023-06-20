@@ -1073,7 +1073,7 @@ function s:GetHctLookup_7bits()
     \ {'nbr':  09, 'sym': 'TAB', 'desc': '', 'ent': ''},
     \ {'nbr':  10, 'sym':  'LF', 'desc': '', 'ent': ''},
     \ {'nbr':  13, 'sym':  'CR', 'desc': '', 'ent': ''},
-    \ {'nbr':  32, 'sym':   "'", 'desc': '', 'ent': ''},
+    \ {'nbr':  32, 'sym':   " ", 'desc': '', 'ent': ''},
     \ {'nbr':  33, 'sym':   '!', 'desc': '', 'ent': ''},
     \ {'nbr':  34, 'sym':   '"', 'desc': '', 'ent': '&quot;'},
     \ {'nbr':  35, 'sym':   '#', 'desc': '', 'ent': ''},
