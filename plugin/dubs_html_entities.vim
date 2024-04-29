@@ -181,11 +181,14 @@ endif
 " window, only this window shows you
 " HTML Character Entity translations.
 " (Note: It's M-%, not M-S-5)
-" SYNC_ME: Dubs Vim's <M-????> mappings are spread across plugins. [M-S-5]
-nmap <M-%> <Plug>DubsHtmlEntities_ToggleLookup
-imap <M-%> <C-O><Plug>DubsHtmlEntities_ToggleLookup<ESC>
-"cmap <M-%> <C-C><Plug>DubsHtmlEntities_ToggleLookup<ESC>
-"omap <M-%> <C-C><Plug>DubsHtmlEntities_ToggleLookup<ESC>
+" - WASAT/2024-04-29: Previously at <Shift-Alt-5>. Demoted b/c rarely used.
+"     nmap <M-%> <Plug>DubsHtmlEntities_ToggleLookup
+"     imap <M-%> <C-O><Plug>DubsHtmlEntities_ToggleLookup<ESC>
+"     " cmap <M-%> <C-C><Plug>DubsHtmlEntities_ToggleLookup<ESC>
+"     " omap <M-%> <C-C><Plug>DubsHtmlEntities_ToggleLookup<ESC>
+" SYNC_ME: Dubs Vim's <M-????> mappings are spread across plugins. [\cT]
+nmap <Leader>cT <Plug>DubsHtmlEntities_ToggleLookup
+imap <Leader>cT <C-O><Plug>DubsHtmlEntities_ToggleLookup<ESC>
 
 " ------------------------------------------
 " Private Interface:
