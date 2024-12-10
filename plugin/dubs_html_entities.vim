@@ -95,9 +95,11 @@ let plugin_htmlchartable_vim = 1
 "       might really be <SNR>16_QuickLookup())
 
 " ---------------
-" Map <Leader>ht to the Html Table
+" Open HTML Character Entity Table with <Leader>dh
+" - HSTRY/2024-12-09: Was <Leader>ht but this feature is rarely
+"   used, and I've been moving most Dubs maps under \d prefix.
 if !hasmapto('<Plug>DubsHtmlEntities_HtmlCharTable')
-  map <silent> <unique> <Leader>ht
+  map <silent> <unique> <Leader>dh
     \ <Plug>DubsHtmlEntities_HtmlCharTable
 endif
 " Map <Plug> to an <SID> function
@@ -110,9 +112,11 @@ function <SID>HtmlCharTable_Wrapper()
 endfunction
 
 " ---------------
-" Map <Leader>hT (with a CAP) to the Quick Lookup
+" Run Inline HTML Entity Converter with <Leader>dH
+" - HSTRY/2024-12-09: Was <Leader>hT but this feature is rarely
+"   used, and I've been moving most Dubs maps under \d prefix.
 if !hasmapto('<Plug>DubsHtmlEntities_QuickLookup')
-  map <silent> <unique> <Leader>hT
+  map <silent> <unique> <Leader>dH
     \ <Plug>DubsHtmlEntities_QuickLookup
 endif
 " Map <Plug>
