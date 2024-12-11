@@ -93,7 +93,7 @@ Entity Table Commands
 Interactive Entity Table
 ------------------------
 
-``<Leader>ht`` (usually ``\ht``) displays an
+``<Leader>dh`` (usually ``\dh``) displays an
 interactive entity list in the current window.
 
 You can double-click entities to copy-and-paste
@@ -118,45 +118,32 @@ be displayed instead.
 Interactive Entity Lookup
 -------------------------
 
-``<Leader>hT`` (usually ``\hT``) invokes the QuickLookup,
-which asks you to type an ASCII character which will be
-converted to another representation and pasted in place.
+``<Leader>dH`` (usually ``\dH``) prompts you for an
+ASCII character, which will be converted to its HTML
+representation and pasted in place.
 
 In the command window, you should see:
 
 ``>> Please enter a character:``
 
-Type just the single character you want
-translated (i.e., ``&``)
+Type just the single character you want translated
 and its entity reference will be inserted into
-your working buffer at the cursor. And note
+your working buffer at the cursor. (And note
 that you don't have to hit return after typing
 the character to be translated).
 
-Toggle Entity List Visibility
------------------------------
+- E.g., if you enter ``&``, it'll insert ``&amp;``.
 
-You can obviously map ``<Leader>ht`` to any key
-command you want, but you can also map a
-toggle function, which creates or destroys
-the interactive entity list depending on
-whether not its already visible.
-
-To map the toggle function to, e.g.,
-``<Alt-Shift-5>`` (or ``<Alt-%>``), add the
-following to your vim environment:
-
-``nmap <M-%> <Plug>DubsHtmlEntities_ToggleLookup``
-
-Core Dubs Vim Key Mappings
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-If you're using all the Dubs Vim, the HTML entity table is already mapped.
+Dubs Vim Kep Mapping Reference
+==============================
 
 ===========================  ============================  ==============================================================================
  Key Mapping                  Description                   Notes
 ===========================  ============================  ==============================================================================
- ``<Shift-Alt-5>``            Toggle HTML                   Show special HTML character entity lookup.
+ ``<Leader>dh``               Toggle HTML                   Show special HTML character entity lookup.
                               Character Entity Table        You can switch between decimal, hexadecimal, and friendly names.
+===========================  ============================  ==============================================================================
+ ``<Leader>dH``               HTML Character Entity         Prompts for a character and inserts its encoded HTML representation.
+                              Prompt                        - E.g., type `&` and it'll insert ``&amp;``.
 ===========================  ============================  ==============================================================================
 

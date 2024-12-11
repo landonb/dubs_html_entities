@@ -95,29 +95,31 @@ let plugin_htmlchartable_vim = 1
 "       might really be <SNR>16_QuickLookup())
 
 " ---------------
-" Open HTML Character Entity Table with <Leader>dh
-" - HSTRY/2024-12-09: Was <Leader>ht but this feature is rarely
-"   used, and I've been moving most Dubs maps under \d prefix.
-if !hasmapto('<Plug>DubsHtmlEntities_HtmlCharTable')
-  map <silent> <unique> <Leader>dh
-    \ <Plug>DubsHtmlEntities_HtmlCharTable
-endif
-" Map <Plug> to an <SID> function
-noremap <silent> <unique> <script>
-  \ <Plug>DubsHtmlEntities_HtmlCharTable
-  \ :call <SID>HtmlCharTable_Wrapper()<CR>
-" And finally thunk to the script fcn.
-function <SID>HtmlCharTable_Wrapper()
-  call s:HtmlCharTable()
-endfunction
+" Open HTML Character Entity Table
+" - ISOFF/2024-12-10: See toggle, below.
+"
+" if !hasmapto('<Plug>DubsHtmlEntities_HtmlCharTable')
+"   map <silent> <unique> <Leader>dh
+"     \ <Plug>DubsHtmlEntities_HtmlCharTable
+" endif
+" " Map <Plug> to an <SID> function
+" noremap <silent> <unique> <script>
+"   \ <Plug>DubsHtmlEntities_HtmlCharTable
+"   \ :call <SID>HtmlCharTable_Wrapper()<CR>
+" " And finally thunk to the script fcn.
+" function <SID>HtmlCharTable_Wrapper()
+"   call s:HtmlCharTable()
+" endfunction
 
 " ---------------
-" Run Inline HTML Entity Converter with <Leader>dH
+" Run Inline HTML Entity Converter
 " - HSTRY/2024-12-09: Was <Leader>hT but this feature is rarely
 "   used, and I've been moving most Dubs maps under \d prefix.
 if !hasmapto('<Plug>DubsHtmlEntities_QuickLookup')
   map <silent> <unique> <Leader>dH
     \ <Plug>DubsHtmlEntities_QuickLookup
+  imap <silent> <unique> <Leader>dH
+    \ <C-O><Plug>DubsHtmlEntities_QuickLookup
 endif
 " Map <Plug>
 noremap <silent> <unique> <script>
@@ -178,7 +180,7 @@ endif
 "        like a lot of work, though... so, for now, most mappings
 "        are hard-coded and not overwriteable.
 
-" Alt-Shift-5 // Toggle HTML Char Table
+" Toggle HTML Char Table
 " --------------------------------
 " This also isn't in EditPlus, but it's
 " similar to the Alt-Shift-1 Cliptext
@@ -190,9 +192,11 @@ endif
 "     imap <M-%> <C-O><Plug>DubsHtmlEntities_ToggleLookup<ESC>
 "     " cmap <M-%> <C-C><Plug>DubsHtmlEntities_ToggleLookup<ESC>
 "     " omap <M-%> <C-C><Plug>DubsHtmlEntities_ToggleLookup<ESC>
-" SYNC_ME: Dubs Vim's <M-????> mappings are spread across plugins. [\cT]
-nmap <Leader>cT <Plug>DubsHtmlEntities_ToggleLookup
-imap <Leader>cT <C-O><Plug>DubsHtmlEntities_ToggleLookup<ESC>
+" - HSTRY/2024-12-09: Was <Leader>ht to show table, and <Leader>cT
+"   to toggle visibilty, but we only need one command, also I've
+"   been moving most Dubs maps under \d prefix.
+nmap <Leader>dh <Plug>DubsHtmlEntities_ToggleLookup
+imap <Leader>dh <C-O><Plug>DubsHtmlEntities_ToggleLookup<ESC>
 
 " ------------------------------------------
 " Private Interface:
