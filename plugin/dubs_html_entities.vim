@@ -37,10 +37,23 @@
 " I lifted the list of HTML4 Character Entities from TNT Luoma:
 "   http://tntluoma.com/files/codes.htm
 
-if exists("g:plugin_dubs_html_entities") || &cp
+" -------------------------------------------------------------------
+
+" GUARD: Press <F9> to reload this plugin (or :source it).
+" - Via: https://github.com/embrace-vim/vim-source-reloader#↩️
+
+if expand('%:p') ==# expand('<sfile>:p')
+  unlet! g:plugin_dubs_html_entities
+endif
+
+if exists('g:plugin_dubs_html_entities') || &cp
+
   finish
 endif
+
 let g:plugin_dubs_html_entities = 1
+
+" -------------------------------------------------------------------
 
 " ------------------------------------------
 " Usage:
