@@ -48,8 +48,8 @@ let g:plugin_dubs_html_entities = 1
 " See 'dubs_html_entities/README.rst' or try
 "  :help dubs_html_entities
 "
-" Basic usage is <Leader>ht but there are
-" a few tricks available.
+" Basic usage is <Leader>dh or <Leader>dH but
+" there are a few tricks available.
 
 " ------------------------------------------
 " User Interface:
