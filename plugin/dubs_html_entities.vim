@@ -118,11 +118,7 @@ let plugin_htmlchartable_vim = 1
 " " Map <Plug> to an <SID> function
 " noremap <silent> <unique> <script>
 "   \ <Plug>DubsHtmlEntities_HtmlCharTable
-"   \ :call <SID>HtmlCharTable_Wrapper()<CR>
-" " And finally thunk to the script fcn.
-" function <SID>HtmlCharTable_Wrapper()
-"   call s:HtmlCharTable()
-" endfunction
+"   \ :call <SID>HtmlCharTable()<CR>
 
 " ---------------
 " Run Inline HTML Entity Converter
@@ -750,7 +746,7 @@ function <SID>ToggleBase(direction)
   endif
 
   " Redraw the table using the new base
-  call <SID>HtmlCharTable_Wrapper()
+  call s:HtmlCharTable()
 
   " Restore the cursor position.
   " NOTE Calling just cursor() centers the cursor
