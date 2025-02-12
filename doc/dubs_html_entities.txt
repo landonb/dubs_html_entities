@@ -1,6 +1,6 @@
 *dubs_html_entities.txt*	For Vim version 7.4.	Last change: 2015 Jan 23
 
-HTML Character Entities~
+HTML Character Entities ~
 
 CHARACTER ENTITY TABLE REFERENCE			*dubs-html-entities*
 
@@ -48,7 +48,7 @@ I lifted the list of HTML4 Character Entities from TNT Luoma:
 ==============================================================================
 2. Entity Table Commands				*dubs-htmlent-commands*
 
-Interactive Entity Table~
+Interactive Entity Table ~
 
 				*<Leader>dh* *\dh*
 <Leader>dh		Display or Hide interactive entity list in the 
@@ -73,7 +73,7 @@ Interactive Entity Table~
 			be destroyed and the last working buffer will 
 			be displayed instead.
 
-Interactive Entity Lookup~
+Interactive Entity Lookup ~
 
 				*<Leader>dH* *\dH*
 <Leader>dH		Invokes the QuickLookup, which asks you to type
