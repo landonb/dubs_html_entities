@@ -252,7 +252,10 @@ function s:HtmlCharTable()
   setlocal modifiable
 
   " Finally write the entity table to the buffer
-  put! = s:txt
+  " - Causes :mess (and Noice notification), e.g.:
+  "   281 more lines
+  "  put! = s:txt
+  silent! put! = s:txt
 
   " Move the cursor back to the top of the buffer
   call cursor(1, 1)
