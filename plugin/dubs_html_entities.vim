@@ -425,6 +425,14 @@ endfunction
 function s:SetLocalKeyMappings()
   " Use 'q' to close the table buffer and
   " switch to the previously used buffer
+  " - Built-in q: opens the command-line window.
+  "   - Author remaps q: → q:: because I often
+  "     typo :q<CR> and type q:<CR> accidentally,
+  "     so I moved :q to q::.
+  "   - In any case, remove maps that might cause
+  "     'q' to not run immediately.
+  silent! unmap <buffer> q:
+  silent! unmap <buffer> q::
   nnoremap <buffer> <silent> q
     \ :call <SID>HctExit()<CR>
 
