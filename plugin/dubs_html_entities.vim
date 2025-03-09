@@ -226,7 +226,6 @@ let s:viewBufNr = -1
 " Creates and loads the HTML Character Entity
 " Table into a new buffer.
 function s:HtmlCharTable()
-
   " Allow modifications (for now; necessary
   " if called from the script's own buffer)
   setlocal modifiable
@@ -258,7 +257,6 @@ function s:HtmlCharTable()
 
   " Disallow modifications; we're done
   setlocal nomodifiable
-
 endfunction
 
 " Table Helper Fcns.
@@ -423,7 +421,6 @@ endfunction
 " hex, and ent), and (3) yank the entity nearest
 " the cursor and put it in the user's last buffer
 function s:SetLocalKeyMappings()
-
   " Use 'q' to close the table buffer and
   " switch to the previously used buffer
   nnoremap <buffer> <silent> q
@@ -461,7 +458,6 @@ function s:SetLocalKeyMappings()
   " ... everybody's favorite key!
   nnoremap <buffer> <silent> <ESC>
     \ :call <SID>HctExit()<CR>
-
 endfunction
 
 " Setup syntax-highlighting so that entities
