@@ -915,6 +915,17 @@ endfunction
 " the entity referece is then inserted into their
 " buffer. The table is not displayed at all.
 function s:QuickLookup()
+  " DUNNO/2025-03-07: There's gotta be a better way to do this...
+  let l:reactivate_noice = 0
+  if &cmdheight == 0
+    try
+      :Noice disable
+      if &cmdheight > 0
+        let l:reactivate_noice = 1
+      endif
+    endtry
+  endif
+
   let match = ""
   " Ask the user for a character to translate
   echo "HTML Entity Translator >> "
@@ -952,6 +963,10 @@ function s:QuickLookup()
     " Not found!
     echo "Sorry, the HTML entity for '"
         \ . ch . "' was not found!"
+  endif
+
+  if l:reactivate_noice
+    :Noice enable
   endif
 endfunction
 
