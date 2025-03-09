@@ -206,8 +206,10 @@ endif
 " - HSTRY/2024-12-09: Was <LocalLeader>ht to show table, and <LocalLeader>cT
 "   to toggle visibilty, but we only need one command, also I've
 "   been moving most Dubs maps under \d prefix.
-nmap <LocalLeader>dh <Plug>DubsHtmlEntities_ToggleLookup
-imap <LocalLeader>dh <C-O><Plug>DubsHtmlEntities_ToggleLookup<ESC>
+if get(g:, 'dubs_html_entities_create_maps', 0)
+  nmap <LocalLeader>dh <Plug>DubsHtmlEntities_ToggleLookup
+  imap <LocalLeader>dh <C-O><Plug>DubsHtmlEntities_ToggleLookup<ESC>
+endif
 
 " ------------------------------------------
 " Private Interface:
