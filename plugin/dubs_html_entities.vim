@@ -61,7 +61,7 @@ let g:plugin_dubs_html_entities = 1
 " See 'dubs_html_entities/README.rst' or try
 "  :help dubs_html_entities
 "
-" Basic usage is <Leader>dh or <Leader>dH but
+" Basic usage is <LocalLeader>dh or <LocalLeader>dH but
 " there are a few tricks available.
 
 " ------------------------------------------
@@ -112,7 +112,7 @@ let plugin_htmlchartable_vim = 1
 " - ISOFF/2024-12-10: See toggle, below.
 "
 " if !hasmapto('<Plug>DubsHtmlEntities_HtmlCharTable')
-"   map <silent> <unique> <Leader>dh
+"   map <silent> <unique> <LocalLeader>dh
 "     \ <Plug>DubsHtmlEntities_HtmlCharTable
 " endif
 " " Map <Plug> to an <SID> function
@@ -122,13 +122,15 @@ let plugin_htmlchartable_vim = 1
 
 " ---------------
 " Run Inline HTML Entity Converter
-" - HSTRY/2024-12-09: Was <Leader>hT but this feature is rarely
+" - HSTRY/2024-12-09: Was <LocalLeader>hT but this feature is rarely
 "   used, and I've been moving most Dubs maps under \d prefix.
-if !hasmapto('<Plug>DubsHtmlEntities_QuickLookup')
-  map <silent> <unique> <Leader>dH
-    \ <Plug>DubsHtmlEntities_QuickLookup
-  imap <silent> <unique> <Leader>dH
-    \ <C-O><Plug>DubsHtmlEntities_QuickLookup
+if get(g:, 'dubs_html_entities_create_maps', 0)
+  if !hasmapto('<Plug>DubsHtmlEntities_QuickLookup')
+    map <silent> <unique> <LocalLeader>dH
+      \ <Plug>DubsHtmlEntities_QuickLookup
+    imap <silent> <unique> <LocalLeader>dH
+      \ <C-O><Plug>DubsHtmlEntities_QuickLookup
+  endif
 endif
 " Map <Plug>
 noremap <silent> <unique> <script>
@@ -201,11 +203,11 @@ endif
 "     imap <M-%> <C-O><Plug>DubsHtmlEntities_ToggleLookup<ESC>
 "     " cmap <M-%> <C-C><Plug>DubsHtmlEntities_ToggleLookup<ESC>
 "     " omap <M-%> <C-C><Plug>DubsHtmlEntities_ToggleLookup<ESC>
-" - HSTRY/2024-12-09: Was <Leader>ht to show table, and <Leader>cT
+" - HSTRY/2024-12-09: Was <LocalLeader>ht to show table, and <LocalLeader>cT
 "   to toggle visibilty, but we only need one command, also I've
 "   been moving most Dubs maps under \d prefix.
-nmap <Leader>dh <Plug>DubsHtmlEntities_ToggleLookup
-imap <Leader>dh <C-O><Plug>DubsHtmlEntities_ToggleLookup<ESC>
+nmap <LocalLeader>dh <Plug>DubsHtmlEntities_ToggleLookup
+imap <LocalLeader>dh <C-O><Plug>DubsHtmlEntities_ToggleLookup<ESC>
 
 " ------------------------------------------
 " Private Interface:
