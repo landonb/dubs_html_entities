@@ -50,8 +50,8 @@ I lifted the list of HTML4 Character Entities from TNT Luoma:
 
 Interactive Entity Table ~
 
-				*<Leader>dh* *\dh*
-<Leader>dh		Display or Hide interactive entity list in the 
+				*<LocalLeader>dh* *\dh*
+<LocalLeader>dh		Display or Hide interactive entity list in the 
 			current window.
 
 			You can double-click entities to copy-and-
@@ -75,8 +75,8 @@ Interactive Entity Table ~
 
 Interactive Entity Lookup ~
 
-				*<Leader>dH* *\dH*
-<Leader>dH		Invokes the QuickLookup, which asks you to type
+				*<LocalLeader>dH* *\dH*
+<LocalLeader>dH		Invokes the QuickLookup, which asks you to type
 			an ASCII character which will be converted to
 			another representation and pasted in place.
 

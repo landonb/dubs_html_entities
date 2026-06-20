@@ -93,7 +93,7 @@ Entity Table Commands
 Interactive Entity Table
 ------------------------
 
-``<Leader>dh`` (usually ``\dh``) displays an
+``<LocalLeader>dh`` (usually ``\dh``) displays an
 interactive entity list in the current window.
 
 You can double-click entities to copy-and-paste
@@ -118,7 +118,7 @@ be displayed instead.
 Interactive Entity Lookup
 -------------------------
 
-``<Leader>dH`` (usually ``\dH``) prompts you for an
+``<LocalLeader>dH`` (usually ``\dH``) prompts you for an
 ASCII character, which will be converted to its HTML
 representation and pasted in place.
 
@@ -140,10 +140,10 @@ Dubs Vim Kep Mapping Reference
 ===========================  ============================  ==============================================================================
  Key Mapping                  Description                   Notes
 ===========================  ============================  ==============================================================================
- ``<Leader>dh``               Toggle HTML                   Show special HTML character entity lookup.
+ ``<LocalLeader>dh``          Toggle HTML                   Show special HTML character entity lookup.
                               Character Entity Table        You can switch between decimal, hexadecimal, and friendly names.
 ===========================  ============================  ==============================================================================
- ``<Leader>dH``               HTML Character Entity         Prompts for a character and inserts its encoded HTML representation.
+ ``<LocalLeader>dH``          HTML Character Entity         Prompts for a character and inserts its encoded HTML representation.
                               Prompt                        - E.g., type `&` and it'll insert ``&amp;``.
 ===========================  ============================  ==============================================================================
 
